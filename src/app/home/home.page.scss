@@ -25,3 +25,27 @@
 #container a {
   text-decoration: none;
 }
+
+#homeInfo {
+  text-align: center;
+  font-weight: bold;
+}
+
+.searchbar {
+  max-width: 500px;
+  width: auto;
+  margin: auto;
+}
+
+.title {
+  font-size: xx-large;
+  font-weight: bolder;
+  color: green;
+}
+
+// -- to override exisiting property
+// https://developer.mozilla.org/en-US/docs/Web/CSS/--*
+ion-button {
+  --background: green;
+  font-size: large;
+}
