@@ -18,13 +18,16 @@
   <div id="homeInfo">
     <h1 class="title">Welcome to SkyBuddy</h1>
     <p>The home of all your weather stats.</p>
-    <p>Simply enter a city to get the latest weater information.</p>
+    <p>Simply enter a city to get the latest weater information,</p>
+    <p>or click Use GPS to get the weather based on your coorindates.</p>
 
-    <!-- Search Bar -->
+    <!-- Get weather info using city search -->
     <ion-searchbar class="searchbar" [(ngModel)]="city" placeholder="Enter a City"></ion-searchbar>
+    <ion-button [routerLink]="['/weather-info']" class="searchButton" (click)="searchWeather()">Search Weather</ion-button>
 
-    <!-- Search Button -->
-    <ion-button class="searchButton" (click)="searchWeather()">Search Weather</ion-button>
+    <!-- Get weather info using your coorindates -->
+    <ion-button [routerLink]="['/weather-info']" (click)="getGPS()">Use GPS</ion-button> 
+    
   </div>
 
 </ion-content>
