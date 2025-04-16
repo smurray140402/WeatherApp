@@ -16,4 +16,8 @@
       <ion-title size="large">Weather</ion-title>
     </ion-toolbar>
   </ion-header>
+
+    <h2>{{ weatherData?.name }}</h2>
+    <!-- https://stackoverflow.com/questions/42069234/force-2-decimal-places-precision-in-ion-input -->
+    <p>Temperature: {{ weatherData?.main?.temp - 273.15 | number:'1.2-2' }} °C</p>
 </ion-content>
