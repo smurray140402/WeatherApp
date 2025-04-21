@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonBackButton } from '@ionic/angular/standalone';
 import { WeatherDataService } from '../weather-data.service';
 import { provideHttpClient, HttpClient } from '@angular/common/http';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-weather-info',
@@ -17,10 +18,12 @@ export class WeatherInfoPage {
   // Variables
   weatherData: any;
 
-  constructor(private weatherService: WeatherDataService, private http: HttpClient) { }
+  constructor(private weatherService: WeatherDataService, private http: HttpClient, private storage:Storage) { }
 
   // When component loads determine which metric to use to get weather data.
-  ngOnInit() {
+  async ngOnInit() {
+    await this.storage.create();
+
     const city = this.weatherService.getCity();
     const coords = this.weatherService.getCoordinates();
 
@@ -29,7 +32,18 @@ export class WeatherInfoPage {
     } else if (coords.lat && coords.long) {
       this.getWeatherByCoords(coords.lat, coords.long);
     } else {
-      console.log("No city or coordinates provided.")
+      // Try to load last used city or coordinates from storage
+      const storedCity = await this.storage.get('lastCity');
+      const storedCoords = await this.storage.get('lastCoords');
+
+      // Checks if there is stored data to use for city or coords
+      if (storedCity) {
+        this.getWeatherByCity(storedCity);
+      } else if (storedCoords?.lat && storedCoords?.long) {
+        this.getWeatherByCoords(storedCoords.lat, storedCoords.long);
+      } else {
+        console.log("No stored city or coordinates found.");
+      }
     }
   }
  
