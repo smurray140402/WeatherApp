@@ -18,7 +18,11 @@
   </ion-header>
 
   <!-- Location -->
-  <h1><b>{{ weatherData?.name }} , {{ weatherData?.sys?.country}}</b></h1>
+  <div style="display: flex; align-items: center;">
+    <h1 style="margin: 0;"><b>{{ weatherData?.name }}, {{ weatherData?.sys?.country }}</b></h1>
+    <img [src]="'https://openweathermap.org/img/wn/' + weatherData?.weather[0]?.icon + '.png'" alt="Weather icon">
+  </div>
+
 
   <!-- Weather Info-->
   <!-- https://stackoverflow.com/questions/42069234/force-2-decimal-places-precision-in-ion-input -->
