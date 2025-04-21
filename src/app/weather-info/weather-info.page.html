@@ -17,7 +17,25 @@
     </ion-toolbar>
   </ion-header>
 
-    <h2>{{ weatherData?.name }}</h2>
-    <!-- https://stackoverflow.com/questions/42069234/force-2-decimal-places-precision-in-ion-input -->
-    <p>Temperature: {{ weatherData?.main?.temp - 273.15 | number:'1.2-2' }} °C</p>
+  <!-- Location -->
+  <h1><b>{{ weatherData?.name }} , {{ weatherData?.sys?.country}}</b></h1>
+
+  <!-- Weather Info-->
+  <!-- https://stackoverflow.com/questions/42069234/force-2-decimal-places-precision-in-ion-input -->
+  <p><b>Temperature:</b> {{ weatherData?.main?.temp - 273.15 | number:'1.2-2' }} °C</p>
+  <p><b>Humidity:</b> {{ weatherData?.main?.humidity }} %</p>
+  <p><b>Pressure:</b> {{ weatherData?.main?.pressure }} hPa</p>
+  <p><b>Wind Speed:</b> {{ weatherData?.wind?.speed }} m/s</p>
+  <p><b>Wind Direction:</b> {{ weatherData?.wind?.deg }}°</p>
+
+  <!-- Weather condition -->
+  <!-- https://stackoverflow.com/a/49298340 -->
+  <p><b>Weather Condition:</b> {{ weatherData?.weather[0]?.description | titlecase }}</p>
+
+  <!-- Visibility -->
+  <p><b>Visibility:</b> {{ weatherData?.visibility / 1000 }} km</p>
+
+  <!-- Clouds (percentage of cloud coverage) -->
+  <p><b>Clouds:</b> {{ weatherData?.clouds?.all }} %</p>
+
 </ion-content>
