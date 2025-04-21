@@ -23,7 +23,7 @@
 
     <!-- Get weather info using city search -->
     <ion-searchbar class="searchbar" [(ngModel)]="city" placeholder="Enter a City"></ion-searchbar>
-    <ion-button class="searchButton" (click)="searchWeather()">Search Weather</ion-button>
+    <ion-button class="searchButton" (click)="searchWeather()" [disabled]="!city">Search Weather</ion-button>
 
     <!-- Get weather info using your coorindates -->
     <ion-button (click)="getGPS()">Use GPS</ion-button> 
