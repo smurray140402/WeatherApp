@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonSearchbar, IonButton } from '@ionic/angular/standalone';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonSearchbar, IonButton, IonButtons, IonBackButton } from '@ionic/angular/standalone';
 import { FormsModule } from '@angular/forms'; 
 import { Geolocation } from '@capacitor/geolocation';
 import { Router } from '@angular/router';
@@ -10,7 +10,7 @@ import { Storage } from '@ionic/storage-angular'
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonSearchbar, IonButton, FormsModule],
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonSearchbar, IonButton, FormsModule, IonButtons, IonBackButton],
 })
 
 export class HomePage {
@@ -25,6 +25,10 @@ export class HomePage {
 
   async ngOnInit() {
     await this.storage.create();
+  }
+
+  goToInfoGuide() {
+    this.router.navigate(['/info-page']);
   }
 
   // Function to save the city to the service, clears the GPS data and navigates to the weather page.

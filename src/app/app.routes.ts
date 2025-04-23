@@ -14,4 +14,8 @@ export const routes: Routes = [
     path: 'weather-info',
     loadComponent: () => import('./weather-info/weather-info.page').then( m => m.WeatherInfoPage)
   },
+  {
+    path: 'info-page',
+    loadComponent: () => import('./info-page/info-page.page').then( m => m.InfoPagePage)
+  },
 ];

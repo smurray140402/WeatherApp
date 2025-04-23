@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Information Guide</ion-title>
+
+    <!-- Back Button -->
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Weather Info Guide</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- Guide that explains the weather data in weather info page-->
+  <!-- All emojis taken from https://emojipedia.org/ -->
+  <div style="padding: 16px;">
+    <h2>🌡️ Temperature</h2>
+    <p>Measured in degrees Celsius. This is the ambient air temperature around you.</p>
+
+    <h2>💧 Humidity</h2>
+    <p>The percentage of water vapor in the air. High humidity can make it feel hotter.</p>
+
+    <h2>📈 Pressure</h2>
+    <p>Measured in hPa. Low pressure usually brings rain, while high pressure means clearer skies.</p>
+
+    <h2>💨 Wind</h2>
+    <p>Speed is in m/s, and direction in degrees (0° = North). It affects how the temperature feels.</p>
+
+    <h2>🌫️ Visibility</h2>
+    <p>Measured in kilometers. Lower values mean fog, heavy rain, or other obstructions.</p>
+
+    <h2>☁️ Cloud Coverage</h2>
+    <p>Percentage of the sky covered by clouds. 100% means fully overcast.</p>
+  </div>
+</ion-content>

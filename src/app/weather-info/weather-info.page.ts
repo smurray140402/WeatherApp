@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonBackButton } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonBackButton, IonButton } from '@ionic/angular/standalone';
 import { WeatherDataService } from '../weather-data.service';
 import { provideHttpClient, HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage-angular';
 
 @Component({
@@ -11,14 +12,14 @@ import { Storage } from '@ionic/storage-angular';
   templateUrl: './weather-info.page.html',
   styleUrls: ['./weather-info.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButtons, IonBackButton]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButtons, IonBackButton, IonButton]
 })
 export class WeatherInfoPage {
 
   // Variables
   weatherData: any;
 
-  constructor(private weatherService: WeatherDataService, private http: HttpClient, private storage:Storage) { }
+  constructor(private weatherService: WeatherDataService, private http: HttpClient, private storage:Storage, private router:Router) { }
 
   // When component loads determine which metric to use to get weather data.
   async ngOnInit() {
@@ -45,6 +46,10 @@ export class WeatherInfoPage {
         console.log("No stored city or coordinates found.");
       }
     }
+  }
+
+  goToInfoGuide() {
+    this.router.navigate(['/info-page']);
   }
  
   // Gets weather data using the city name and stores the data in weatherData and logs it to console.

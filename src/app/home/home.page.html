@@ -1,8 +1,12 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      SkyBuddy
-    </ion-title>
+    <ion-title>SkyBuddy</ion-title>
+
+    <!-- Info/Help Button -->
+    <ion-buttons slot="end">
+      <ion-button (click)="goToInfoGuide()" style="background-color: green; border-radius: 10px; color: white;">Info Guide</ion-button>
+    </ion-buttons>
+
   </ion-toolbar>
 </ion-header>
 
