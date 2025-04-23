@@ -17,25 +17,131 @@
     </ion-toolbar>
   </ion-header>
 
-  <!-- Guide that explains the weather data in weather info page-->
-  <!-- All emojis taken from https://emojipedia.org/ -->
-  <div style="padding: 16px;">
-    <h2>🌡️ Temperature</h2>
+  <!-- Guide that explains the weather data metrics in weather info page -->
+  <div class="help-section-top">
+    <h2 class="section-title-top">🌡️ Temperature</h2>
     <p>Measured in degrees Celsius. This is the ambient air temperature around you.</p>
+  </div>
 
-    <h2>💧 Humidity</h2>
+  <div class="help-section-top">
+    <h2 class="section-title-top">💧 Humidity</h2>
     <p>The percentage of water vapor in the air. High humidity can make it feel hotter.</p>
+  </div>
 
-    <h2>📈 Pressure</h2>
+  <div class="help-section-top">
+    <h2 class="section-title-top">📈 Pressure</h2>
     <p>Measured in hPa. Low pressure usually brings rain, while high pressure means clearer skies.</p>
+  </div>
 
-    <h2>💨 Wind</h2>
+  <div class="help-section-top">
+    <h2 class="section-title-top">💨 Wind</h2>
     <p>Speed is in m/s, and direction in degrees (0° = North). It affects how the temperature feels.</p>
+  </div>
 
-    <h2>🌫️ Visibility</h2>
+  <div class="help-section-top">
+    <h2 class="section-title-top">🌫️ Visibility</h2>
     <p>Measured in kilometers. Lower values mean fog, heavy rain, or other obstructions.</p>
+  </div>
 
-    <h2>☁️ Cloud Coverage</h2>
+  <div class="help-section-top">
+    <h2 class="section-title-top">☁️ Cloud Coverage</h2>
     <p>Percentage of the sky covered by clouds. 100% means fully overcast.</p>
   </div>
+
+  <!-- How Weather Works -->
+  <div class="help-section">
+    <h2 class="section-title">🧠 <b>How Weather Works</b></h2>
+    
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>What Causes Rain?</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Warm air rises and cools, causing water vapor to condense into droplets. When droplets get heavy, they fall as rain.</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Why Does Wind Blow?</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>It's all about air pressure. Air moves from high-pressure areas to low-pressure areas. The bigger the difference, the stronger the wind.</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>What Are Clouds Made Of?</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Clouds are made of tiny water droplets or ice crystals suspended in the air. They form when warm, moist air rises, cools, and condenses around small particles the droplets can cling to like dust or pollen.</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>How Is Temperature Measured?</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Temperature is measured using a thermometer, which detects how hot or cold something is based on the expansion of a liquid (like mercury or alcohol) or electronic sensors. It reflects the average kinetic energy - or movement - of the molecules in a substance.</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>What Is Thunder?</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Thunder is the sound produced by the rapid expansion and contraction of air caused by lightning's extreme heat.</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>What Causes A Tornado?</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>A tornado forms when warm, moist air meets cold, dry air, causing strong winds to rotate and form a funnel.</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>What Is A Cold Front?</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>A cold front occurs when a mass of cold air pushes into warmer air, often bringing heavy rain or storms.</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>What Is A Warm Front?</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>A warm front happens when warm air slides over cooler air, typically bringing light rain or cloudy weather.</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <!-- Fun Weather Facts -->
+  <div class="help-section" style="padding: 16px;">
+    <h2 class="section-title">🤯 <b>Fun Weather Facts</b></h2>
+    <ion-list>
+      <ion-item>💥 Lightning is hotter than the surface of the sun - around 30,000°C!</ion-item>
+      <ion-item>🧊 The coldest temp ever recorded on Earth was -89.2°C in Antarctica.</ion-item>
+      <ion-item>☀️ The hottest ever? 56.7°C in Death Valley, California (1913).</ion-item>
+      <ion-item>🌪️ Tornadoes can spin at over 300 mph - faster than a Formula 1 car.</ion-item>
+      <ion-item>🌈 Rainbows are full circles, but we usually only see half!</ion-item>
+      <ion-item>🌧️ It can rain fish or frogs! Waterspouts or tornadoes can lift these creatures from the ground and carry them for miles.</ion-item>
+      <ion-item>🌍 The world's wettest place is Mawsynram, India, which receives more than 467 inches of rain each year.</ion-item>
+      <ion-item>💨 The fastest wind speed ever recorded was 253 mph (407 km/h) during Cyclone Olivia in 1996.</ion-item>
+      <ion-item>❄️ Snowflakes are all unique! No two snowflakes are exactly the same due to the random nature of their formation.</ion-item>
+      <ion-item>🌡️ A heatwave is defined as prolonged hot weather, usually lasting at least three days, that is considered hotter than usual for the region.</ion-item>
+      <ion-item>🌪️ Hurricanes are named from predetermined lists, and they alternate between male and female names each year.</ion-item>
+      <ion-item>⚡ Lightning can strike the same place multiple times - the Empire State Building gets hit around 20-25 times a year!</ion-item>
+    </ion-list>
+  </div>
+
 </ion-content>
