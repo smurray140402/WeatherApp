@@ -6,13 +6,15 @@ import { WeatherDataService } from '../weather-data.service';
 import { provideHttpClient, HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage-angular';
+import { IonCard, IonCardContent, IonCardHeader, IonCardTitle } from '@ionic/angular/standalone';
+
 
 @Component({
   selector: 'app-weather-info',
   templateUrl: './weather-info.page.html',
   styleUrls: ['./weather-info.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButtons, IonBackButton, IonButton]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButtons, IonBackButton, IonButton, IonCard, IonCardContent, IonCardHeader, IonCardTitle]
 })
 export class WeatherInfoPage {
 

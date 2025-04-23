@@ -1,0 +1,21 @@
+.weather-content {
+    padding: 16px;
+  }
+  
+.weather-location {
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    margin-bottom: 16px;
+}
+
+ion-card-content p {
+    color: black;
+    margin: 8px 0;
+}
+
+ion-card {
+    margin: 16px;
+    border-radius: 12px;
+    background-color: #b6f5b5;
+  }

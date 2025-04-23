@@ -15,7 +15,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="weather-content">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Weather</ion-title>
@@ -23,28 +23,28 @@
   </ion-header>
 
   <!-- Location -->
-  <div style="display: flex; align-items: center;">
+  <div class="weather-location">
     <h1 style="margin: 0;"><b>{{ weatherData?.name }}, {{ weatherData?.sys?.country }}</b></h1>
     <img [src]="'https://openweathermap.org/img/wn/' + weatherData?.weather[0]?.icon + '.png'" alt="Weather icon">
   </div>
 
+  <!-- Ion Card to store the weather data -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title style="font-weight: bold;">Current Conditions</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
 
-  <!-- Weather Info-->
-  <!-- https://stackoverflow.com/questions/42069234/force-2-decimal-places-precision-in-ion-input -->
-  <p><b>Temperature:</b> {{ weatherData?.main?.temp - 273.15 | number:'1.2-2' }} °C</p>
-  <p><b>Humidity:</b> {{ weatherData?.main?.humidity }} %</p>
-  <p><b>Pressure:</b> {{ weatherData?.main?.pressure }} hPa</p>
-  <p><b>Wind Speed:</b> {{ weatherData?.wind?.speed }} m/s</p>
-  <p><b>Wind Direction:</b> {{ weatherData?.wind?.deg }}°</p>
+      <p><b>🌡️ Temperature:</b> {{ weatherData?.main?.temp - 273.15 | number:'1.2-2' }} °C</p>
+      <p><b>💧 Humidity:</b> {{ weatherData?.main?.humidity }} %</p>
+      <p><b>📈 Pressure:</b> {{ weatherData?.main?.pressure }} hPa</p>
+      <p><b>💨 Wind Speed:</b> {{ weatherData?.wind?.speed }} m/s</p>
+      <p><b>🧭 Wind Direction:</b> {{ weatherData?.wind?.deg }}°</p>
+      <p><b>🌥️ Condition:</b> {{ weatherData?.weather[0]?.description | titlecase }}</p>
+      <p><b>🌫️ Visibility:</b> {{ weatherData?.visibility / 1000 }} km</p>
+      <p><b>☁️ Cloud Coverage:</b> {{ weatherData?.clouds?.all }} %</p>
 
-  <!-- Weather condition -->
-  <!-- https://stackoverflow.com/a/49298340 -->
-  <p><b>Weather Condition:</b> {{ weatherData?.weather[0]?.description | titlecase }}</p>
-
-  <!-- Visibility -->
-  <p><b>Visibility:</b> {{ weatherData?.visibility / 1000 }} km</p>
-
-  <!-- Clouds (percentage of cloud coverage) -->
-  <p><b>Clouds:</b> {{ weatherData?.clouds?.all }} %</p>
-
+    </ion-card-content>
+  </ion-card>
 </ion-content>
+
